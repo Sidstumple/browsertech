@@ -15,6 +15,9 @@
   ],
   "author": "Cyd Stumpel",
   "license": "MIT",
+  "engines": {
+  "node": "v6.10.0"
+  },
   "bugs": {
     "url": "https://github.com/Sidstumple/browsertech/issues"
   },
