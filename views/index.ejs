@@ -502,9 +502,10 @@
       searchField.attachEvent("onclick", function (el) {
         el.returnValue = false;
         console.log(this.parentNode);
+        console.log('//////////////');
+        
         var val =  this.parentNode.children[0].value;
         console.log(val);
-        console.log('//////////////');
         window.location.hash = val;
       })
     }
