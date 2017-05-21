@@ -470,7 +470,17 @@
       if (search.innerHTML) {
         search.innerHTML = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-field">Zoek</button></form>';
       } else {
-        search.innerText = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-field">Zoek</button></form>';
+        var form = document.createElement('form');
+        var input = document.createElement('input');
+        input.setAttribute('type', 'search');
+        input.setAttribute('class', 'search');
+        input.setAttribute('placeholder', 'Search contacts');
+        var submitButton = document.createElement('button').appendChild(document.createTextNode('Zoek'));
+        submitButton.setAttribute('id', 'search-field');
+        submitButton.setAttribute('type', 'submit');
+
+        form.appendChild(input);
+        form.appendChild(submitButton);
       }
 
       var searchField = document.getElementById('search-field');
