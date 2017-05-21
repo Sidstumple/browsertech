@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul > li:first-of-type {
+  background: white;
+  border-bottom: 0.1em solid #bbb;
+  height: 3em;
+  line-height: 2.9em;
+  display: block;
+}
+
+ul > li:first-of-type h2 {
+  color: #333;
+  font-weight: normal;
+  font-size: .8em;
+}
+
+ul li {
+  background: white;
+  color: #333;
+  padding-left: 1em;
+  margin: 0;
+}
+
+.detail {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+}
+
+.digits {
+  height: 0;
+  overflow: hidden;
+  background: white;
+  margin-left: 3em;
+}
+
+.open {
+  height: 5.5em;
+  transition: .5s;
+}
+
+.contact:target {
+  padding-top: 40px;
+  margin-top: -40px;
+}
+
+li h2 {
+  margin: 0;
+  margin-left: 1em;
+  display: inline-block;
+}
+
+ul li > a:first-of-type {
+  transform: rotate(0);
+  transition: 1s;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+.letter {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #ddd;
+  font-size: 2em;
+  font-weight: bold;
+  padding-left: 0.5em;
+  z-index: 1;
+}
+
+.icon {
+  width: 1em;
+}
+
+.search {
+  border: 0.3em #f9b41e solid;
+  height: 3em;
+  width: 27em;
+  margin: 2em 1em;
+  box-sizing: border-box;
+  font-size: 1em;
+  padding-left: 0.5em;
+}
+
+.title {
+  padding-left: 1em;
+  background: #111;
+  height: 4em;
+  line-height: 3.9em;
+}
+
+.title h1 {
+  color: white;
+  margin: 0;
+}
+
+.alphabet {
+  width: 4em;
+  text-align: center;
+  top: 0;
+  background: white;
+  height: 100vw;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  padding: 0.5em;
+  border-left: 0.2em solid #333;
+  z-index: 2;
+}
+
+.alphabet li {
+  margin-top: 0.1em;
+  font-weight: bold;
+}
+.alphabet a {
+  text-decoration: none;
+  color: #f9b41e;
+}
+
+a.disabled {
+  color: #ddd;
+  cursor: default;
+}
+
+a.enabled {
+  text-decoration: none;
+  color: #f9b41e;
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(45deg);
+  transition: .2s;
+}
+
+.active {
+  background: #111 !important;
+}
+
+.highlight {
+  background: #888 !important;
+}
+
+.hide {
+  display: none;
+}
+
+.expand {
+  height: 0;
+  overflow: hidden;
+  font-weight: 100;
+  font-size: 0.8em;
+}
+
+:target  > .expand {
+  overflow: visible;
+  height: 4.5em;
+  transition: 1s;
+  color: #555;
+  margin-top: -6.5em;
+  padding-top: 6.5em;
+}
+:target + div > .expand {
+  overflow: visible;
+  height: 4.5em;
+  transition: 1s;
+  color: #555;
+}
+
+
+.expand li {
+  padding: .5em 4em;
+  color: white;
+  background: #777;
+}
+
+@supports (display:flex) {
+  .alphabet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 1em;
+    height: 100%;
+    box-sizing: border-box;
+  }
+}
