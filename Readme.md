@@ -20,5 +20,18 @@ With CSS i've added `position: fixed` to the aside, this makes it easier for the
   transition: 1s;
 }
 ```
+Because anchors require no javascript they are very useful in this app.
 
 ![css anchors](/img/css.gif)
+
+## JavaScript
+I enhanced the app with a search function which works through anchors. The value a user enters in the `input` tag becomes the new hash.
+```javascript
+searchField.addEventListener('change', function (el) {
+  event.preventDefault(); //to undo the default action > refreshing the page
+  var val = this.value.charAt(0).toUpperCase() + this.value.slice(1); //to make sure all queries are capitalized
+  window.location.hash = val; //adds the hash to the url so it acts as an anchor
+})
+```
+![js search](/img/js.gif)
+
