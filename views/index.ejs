@@ -465,7 +465,7 @@
           lastName: 'Yates',
           phoneNumber: '(+31)653525517',
           Company: 'Aliquam Industries' } ];
-      
+
       if(search.innerHTML) {
         search.innerHTML = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-field">Zoek</button></form>';
       } else {
@@ -474,7 +474,8 @@
         input.setAttribute('type', 'search');
         input.setAttribute('class', 'search');
         input.setAttribute('placeholder', 'Search contacts');
-        var submitButton = document.createElement('button').appendChild(document.createTextNode('Zoek'));
+        var submitButton = document.createElement('button');
+        submitButton.appendChild(document.createTextNode('Zoek'));
         submitButton.id = 'search-field';
         submitButton.setAttribute('type', 'submit');
 
