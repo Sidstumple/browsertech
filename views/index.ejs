@@ -470,7 +470,7 @@
     var searchField = document.getElementById('search-field');
     searchField.addEventListener('change', function (el) {
       event.preventDefault();
-      var val = this.value;
+      var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
       console.log(val);
       window.location.hash = val;
     })
