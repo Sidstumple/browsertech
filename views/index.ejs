@@ -470,7 +470,7 @@
       var searchField = document.getElementById('search-field');
 
     if (searchField.addEventListener) {
-      searchField.addEventListener('input', function (el) {
+      searchField.addEventListener('submit', function (el) {
         event.preventDefault();
         var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
         console.log(val);
@@ -479,7 +479,7 @@
     }
     else {
       console.log('This is for IE8 or lower');
-      searchField.attachEvent("oninput", function (el) {
+      searchField.attachEvent("onsubmit", function (el) {
         event.preventDefault();
         var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
         console.log(val);
