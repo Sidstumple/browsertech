@@ -466,7 +466,13 @@
           phoneNumber: '(+31)653525517',
           Company: 'Aliquam Industries' } ]
 
-      search.innerHTML = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-field">Zoek</button></form>';
+      // for IE8:
+      if (search.innerHTML) {
+        search.innerHTML = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-field">Zoek</button></form>';
+      } else {
+        search.innerText = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-field">Zoek</button></form>';
+      }
+
       var searchField = document.getElementById('search-field');
       console.log(document.querySelectorAll('#search-field'));
 
