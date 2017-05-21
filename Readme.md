@@ -22,3 +22,5 @@ With CSS i've added `position: fixed` to the aside, this makes it easier for the
   padding-top: 6.5em;
 }
 ```
+
+![css anchors](/img/css.gif)
