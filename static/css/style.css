@@ -191,11 +191,22 @@ a.enabled {
   color: #555;
 }
 
-
 .expand li {
   padding: .5em 4em;
   color: white;
   background: #777;
+}
+
+button {
+  background: #C10B0B;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  padding: 1em;
+  box-sizing: border-box;
+  height: 3.5em;
+  width: 7em;
 }
 
 @supports (display:flex) {
