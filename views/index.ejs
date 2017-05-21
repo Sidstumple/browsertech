@@ -29,12 +29,12 @@
           <%}%>
           <div id="<%= data.lastName.charAt(0)%>" class="contact">
             <ul>
-              <li id="<%=data.lastName%>"><a href="#<%= data.firstName%>">+<h2 class="name"><strong><%= data.lastName %></strong>, <%= data.firstName %></h2></a></li>
-              <div id="<%= data.firstName%>">
+              <div class="anchor" id="<%=data.lastName%>"></div>
+              <li><a href="#<%= data.firstName%>">+<h2 class="name"><strong><%= data.lastName %></strong>, <%= data.firstName %></h2></a></li>
+              <div id="<%= data.firstName%>" class="anchor"></div>
                 <div class="expand">
-                  <li><%= data.Company %></li>
-                  <li><%= data.phoneNumber %></li>
-                </div>
+                <li><%= data.Company %></li>
+                <li><%= data.phoneNumber %></li>
               </div>
             </ul>
           </div>

@@ -168,16 +168,20 @@ a.enabled {
   font-size: 0.8em;
 }
 
-:target  > .expand {
-  overflow: visible;
+:target  + .expand {
   height: 4.5em;
   transition: 1s;
   color: #555;
-  margin-top: -6.5em;
-  padding-top: 6.5em;
 }
-:target + div > .expand {
-  overflow: visible;
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -6em;
+  visibility: hidden;
+}
+
+:target + li + div + .expand {
   height: 4.5em;
   transition: 1s;
   color: #555;
