@@ -89,7 +89,7 @@ ul li > a:first-of-type {
 }
 
 .search {
-  border: 0.3em #f9b41e solid;
+  border: 0.3em #c10b0b solid;
   height: 3em;
   width: 27em;
   margin: 2em 1em;
@@ -130,7 +130,7 @@ ul li > a:first-of-type {
 }
 .alphabet a {
   text-decoration: none;
-  color: #f9b41e;
+  color: #c10b0b;
 }
 
 a.disabled {
@@ -140,7 +140,7 @@ a.disabled {
 
 a.enabled {
   text-decoration: none;
-  color: #f9b41e;
+  color: #c10b0b;
   cursor: pointer;
 }
 
