@@ -479,7 +479,7 @@
     }
     else {
       console.log('This is for IE8 or lower');
-      searchField.attachEvent("onchange",, function (el) {
+      searchField.attachEvent("onchange", function (el) {
         var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
         console.log(val);
         window.location.hash = val;
