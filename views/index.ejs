@@ -501,7 +501,7 @@
       console.log('This is for IE8 or lower');
       searchField.attachEvent("onclick", function (el) {
         el.returnValue = false;
-        console.log(this);
+        console.log(this.parentNode);
         // var val =  this.parentNode.children[0].value.charAt(0).toUpperCase() +  this.parentNode.children[0].value.slice(1);
         // console.log(val);
         // window.location.hash = val;
