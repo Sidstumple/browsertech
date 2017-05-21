@@ -27,6 +27,10 @@ ul > li:first-of-type h2 {
   font-size: .8em;
 }
 
+ul > li:first-of-type h2:hover {
+  color: #000;
+}
+
 ul li {
   background: white;
   color: #333;
