@@ -466,15 +466,20 @@
           phoneNumber: '(+31)653525517',
           Company: 'Aliquam Industries' } ]
 
-      search.innerHTML = '<form><input type="search" class="search" id="search-field"></input></form>';
+      search.innerHTML = '<form><input type="search" class="search" id="search-field" placeholder="Search contacts"></input></form>';
       var searchField = document.getElementById('search-field');
+
+    if (searchField.addEventListener) {
       searchField.addEventListener('change', function (el) {
         event.preventDefault();
         var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
         console.log(val);
         window.location.hash = val;
       })
-
+    }
+    else {
+      searchField.attachEvent("onchange", setCheckedValues);
+    }
     </script>
   </body>
 </html>
