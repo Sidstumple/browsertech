@@ -102,7 +102,7 @@ if (searchField.addEventListener) { // if addEventListener is a function
     window.location.hash = val;
   })
 } else { 
-  searchField.attachEvent("onchange",, function (el) { // use IE's attachEvent method
+  searchField.attachEvent("onchange", function (el) { // use IE's attachEvent method
     var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
     window.location.hash = val;
   })
