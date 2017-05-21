@@ -6,13 +6,13 @@
 3. [Features](#features)
   3.1 [HTML](#html)
   3.2 [CSS](#css)
-  3.3 [Javascript](#js)
+  3.3 [Javascript](#javascript)
 4. [Accessibility](#accessibility)
 5. [Accessibility](#accessibility)
   5.1  [Contrast](#contrast)
   5.2 [Keyboard friendly](#keyboard)
 6. [Affordance](#affordance)
-7. [Cross browser testing](#crossbrowser)
+7. [Cross browser testing](#cross-browser)
   7.1 [Edge](#Edge)
   7.2 [IE11](#IE11) 
   7.3 [IE8](#IE8)
@@ -47,7 +47,7 @@ Because anchors require no javascript they are very useful in this app.
 
 ![css anchors](/img/css.gif)
 
-### [Javascript](#js)
+### [Javascript](#javascript)
 I enhanced the app with a search function which works through anchors. The value a user enters in the `input` tag becomes the new hash.
 ```javascript
 searchField.addEventListener('change', function (el) {
@@ -74,7 +74,7 @@ The app is accessible through the keyboard, the user can use their tab key to ta
 All contacts have a '+' next to them to indicate that it is expandible. All contact names have a hover state and the cursor becomes a pointer, which gives the affordance of a link which is clickable. 
 I added a placeholder to the searchbar to make it's use is clearer.
 
-## [Cross browser testing](#crossbrowser)
+## [Cross browser testing](#cross-browser)
 I've tested the app in IE 8, IE 11, and Microsoft Edge browsers. Of course I've also tested in Chrome, but this went as I expected, because it is the browser I always use to test and develop in. 
 
 ### [Edge](#Edge)
