@@ -496,6 +496,7 @@
       })
     }
     else {
+      window.location.hash = window.location.hash;
       console.log('This is for IE8 or lower');
       searchField.attachEvent("onclick", function (el) {
         el.returnValue = false;
