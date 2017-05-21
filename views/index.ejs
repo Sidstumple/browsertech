@@ -476,7 +476,7 @@
         input.setAttribute('class', 'search');
         input.setAttribute('placeholder', 'Search contacts');
         var submitButton = document.createElement('button').appendChild(document.createTextNode('Zoek'));
-        submitButton.setAttribute('id', 'search-field');
+        submitButton.id = 'search-field';
         submitButton.setAttribute('type', 'submit');
 
         form.appendChild(input);
