@@ -3,19 +3,19 @@
 ### Contents:
 1. [User Story](#user-story)
 2. [Basic Functionality](#basic-functionality)
-3. [Features](#features)
-  3.1. [HTML](#html)
-  3.2. [CSS](#css)
-  3.3. [Javascript](#javascript)
+3. [Features](#features)<br>
+  3.1 [HTML](#html)<br>
+  3.2 [CSS](#css)<br>
+  3.3 [Javascript](#javascript)
 4. [Accessibility](#accessibility)
-5. [Accessibility](#accessibility)
-  5.1.  [Contrast](#contrast)
-  5.2. [Keyboard friendly](#keyboard)
+5. [Accessibility](#accessibility)<br>
+  5.1  [Contrast](#contrast)<br>
+  5.2 [Keyboard friendly](#keyboard)
 6. [Affordance](#affordance)
-7. [Crossbrowser testing](#crossbrowser-testing)
-  7.1 [Edge](#Edge)
-  7.2 [IE11](#IE11) 
-  7.3 [IE8](#IE8)
+7. [Crossbrowser testing](#crossbrowser-testing)<br>
+  7.1 [Edge](#Edge)<br>
+  7.2 [IE11](#IE11) <br>
+  7.3 [IE8](#IE8)<br>
 
 
 ## [User Story](#user-story)
