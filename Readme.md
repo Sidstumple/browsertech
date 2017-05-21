@@ -18,7 +18,7 @@ With CSS i've added `position: fixed` to the aside, this makes it easier for the
   overflow: visible;
   height: 4.5em;
   transition: 1s;
-  margin-top: -6.5em; /*This is so the page scrolls to the right position and the contact name is still visible*/
-  padding-top: 6.5em;
 }
 ```
+
+![css anchors](/img/css.gif)
