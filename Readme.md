@@ -29,6 +29,7 @@ The basic functionality of this app is searching for contacts alphabetically. Th
 + Searching alphabetically
 + Searching by query
 + Viewing details by clicking on a contact
++ Sticky position headers that stick to the top of the page while scrolling
 
 ### [HTML](#html)
 Without CSS the basic functionality of searching alphabetically still works. It's not as easy as it is **with** styles, you have to scroll to the top everytime you want to search for a new letter because the aside with letters is not fixed to the page. You can also still view details, they are automatically visible undrneath the contact's name.
