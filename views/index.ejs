@@ -470,20 +470,20 @@
       var searchField = document.getElementById('search-field');
 
     if (searchField.addEventListener) {
+      el.preventDefault();
       searchField.addEventListener('submit', function (el) {
         var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
         console.log(val);
         window.location.hash = val;
-        el.preventDefault();
       })
     }
     else {
+      el.preventDefault();
       console.log('This is for IE8 or lower');
       searchField.attachEvent("onsubmit", function (el) {
         var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
         console.log(val);
         window.location.hash = val;
-        el.preventDefault();
       })
     }
     // Used this forum thread to create feature checker for event listener which is not supported in ie 8 and lower: http://stackoverflow.com/questions/9769868/addeventlistener-not-working-in-ie8
