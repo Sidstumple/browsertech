@@ -33,3 +33,5 @@ searchField.addEventListener('change', function (el) {
   window.location.hash = val; //adds the hash to the url so it acts as an anchor
 })
 ```
+
+![js search](/img/js.gif)
