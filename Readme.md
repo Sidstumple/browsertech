@@ -13,9 +13,9 @@
   5.2 [Keyboard friendly](#keyboard)
 6. [Affordance](#affordance)
 7. [Crossbrowser testing](#crossbrowser-testing)<br>
-  7.1 [Edge](#Edge)<br>
-  7.2 [IE11](#IE11) <br>
-  7.3 [IE8](#IE8)<br>
+  7.1 [Edge](#edge)<br>
+  7.2 [IE11](#ie11) <br>
+  7.3 [IE8](#ie8)<br>
 
 
 ## [User Story](#user-story)
