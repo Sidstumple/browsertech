@@ -474,7 +474,7 @@
         var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
         console.log(val);
         window.location.hash = val;
-        event.preventDefault();
+        el.preventDefault();
       })
     }
     else {
@@ -483,7 +483,7 @@
         var val = this.value.charAt(0).toUpperCase() + this.value.slice(1);
         console.log(val);
         window.location.hash = val;
-        event.preventDefault();
+        el.preventDefault();
       })
     }
     // Used this forum thread to create feature checker for event listener which is not supported in ie 8 and lower: http://stackoverflow.com/questions/9769868/addeventlistener-not-working-in-ie8
