@@ -35,3 +35,18 @@ searchField.addEventListener('change', function (el) {
 ```
 
 ![js search](/img/js.gif)
+
+## Accessibility
+### Contrast
+All elements on the app have been tested with [Lea Verou's Contrast Ratio](http://leaverou.github.io/contrast-ratio/). Contrast is very important to people with a visual impairment. It makes the difference between a good and a bad experience, so I gave it a lot of attention.
+
+![contrast ratio](/img/contrast-ratio.png)
+
+### Keyboard friendly
+The app is accessible through the keyboard, the user can use their tab key to tab through all contacts. By pushing enter the user will get extra information about the contact.
+
+![keyboard accessibility](/img/tab.gif)
+
+## Affordance 
+All contacts have a '+' next to them to indicate that it is expandible. All contact names have a hover state and the cursor becomes a pointer, which gives the affordance of a link which is clickable. 
+I added a placeholder to the searchbar to make it's use clearer.
