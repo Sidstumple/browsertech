@@ -469,6 +469,7 @@
       if(search.innerHTML) {
         search.innerHTML = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-button">Zoek</button></form>';
       } else {
+        var form = document.createElement('form');
         var input = document.createElement('input');
         input.setAttribute('type', 'search');
         input.setAttribute('class', 'search');
@@ -479,7 +480,10 @@
         submitButton.setAttribute('id', 'search-button');
         submitButton.setAttribute('type', 'submit');
 
-        search.appendChild(input);
+        search.appendChild(form);
+        form.appendChild(input);
+        form.appendChild(submitButton);
+
       }
 
       var searchButton = document.getElementById('search-button');
