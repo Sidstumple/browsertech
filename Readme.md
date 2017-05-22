@@ -97,12 +97,11 @@ Everything broke in IE8, here is a list and I'm sure I forgot something:
 - `.innerHTML`
 - `addEventListener`
 - `parentNode`
-- `classList`
 - `event.preventDefault`
 - `:target`
+- `classList`
 
-
-### .innerHTML
+#### .innerHTML
 Appearently you cannot use `.innerHTML` for html tags in IE8, I fixed this with `createElement` and `appendChild`:
 ```javascript
 var form = document.createElement('form');
@@ -146,5 +145,21 @@ Then I found out `parentNode` wasn't working, I found a different way to get the
   document.getElementById('search-field').value.charAt(0).toUpperCase() + document.getElementById('search-field').value.slice(1); // to make every query be capitalized.
 ```
 
+#### event.preventDefault()
+Not supported, found a fallback:
+```javascript
+  el.returnValue = false; // el is the parameter of the event function
+```
 
+#### :target
+The CSS `:target` selector is not supported in IE8. All details from contacts were viewed by using a target selector. I first tried to use the @supports feature detection of CSS, but this of course didn't work because `:target` is not a css rule, it's a selector.
+I decided to fix it with Javascript and added a class.
 
+#### classList 
+ClassList is also not supported in IE8, I fixed this by using `className`:
+```javascript
+  var details = document.querySelectorAll('#details');
+  for (i=0; i<details.length; i++) {
+    details[i].className += 'internet-explorer';
+  }
+```
