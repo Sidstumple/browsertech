@@ -495,9 +495,9 @@
       console.log('This is for IE8 or lower');
       searchField.attachEvent("onclick", function (el) {
         el.returnValue = false;
-        console.log(this);
+        console.log(this.value);
         console.log('//////////////');
-        console.log(searchField.getAttribute('value'));
+        
         var val =  this.value;
         console.log(val);
         window.location.hash = val;
