@@ -18,12 +18,14 @@ View live version on: https://browsertech.herokuapp.com/
   7.2 [IE11](#ie11) <br>
   7.3 [IE8](#ie8)<br>
 
+## Summary
+This app was made for the course Browser Technologies of the Minor Web Development at the University of Applied Sciences Amsterdam. Browser Technologies helped us to view our websites and apps from a different angle, from a kind of dark place, sometimes literally, where a lot users of the internet reside. We were forced to face the facts: not everyone is viewing your app on the newest browser, not everyone has the fastest internet connection, and not everyone can see. The most important lesson I took from this was backwards compatability, start with a core- or basic functionality and make every step an enhancement, not a neccessity. 
 
 ## [User Story](#user-story)
 I want to be able to search contacts and view details.
 
 ## [Basic Functionality](#basic-functionality)
-The basic functionality of this app is searching for contacts alphabetically. This is the functionality that always works, even when Javascript or CSS styles are disabled.
+The basic functionality of this app is searching for contacts alphabetically. This is the functionality that always works, even without Javascript & CSS, and even in IE8.
 
 ## [Features](#features)
 + Searching alphabetically
@@ -77,7 +79,7 @@ All contacts have a '+' next to them to indicate that it is expandible. All cont
 I added a placeholder to the searchbar to make it's use is clearer.
 
 ## [Crossbrowser testing](#crossbrowser-testing)
-I've tested the app in IE 8, IE 11, and Microsoft Edge browsers. Of course I've also tested in Chrome, but this went as I expected, because it is the browser I always use to test and develop in. 
+I've tested the app in IE 8, Firefox, and Microsoft Edge browsers. Of course I've also tested in Chrome, but this went as I expected, because it is the browser I always use to test and develop in. 
 
 ### [Edge](#Edge)
 Microsoft Edge worked just fine, except for its Emulator which is supposed to show you how your website looks in older versions of IE. I knew it didn't work because my Flexbox styles were still in place. 
@@ -87,11 +89,38 @@ In Edge the sticky header doesn't work, it acts as if it's set to `position: ini
 
 ![edge non sticky header](/img/edge-sticky.jpg)
 
-
-### [IE11](#IE11) 
+### Firefox
 
 
 ### [IE8](#IE8)
+Everything broke in IE8, here is a list and I'm sure I forgot something:
+- `.innerHTML`
+- `addEventListener`
+- `parentNode`
+- `event.preventDefault`
+- `:target`
+- `classList`
+
+#### .innerHTML
+Appearently you cannot use `.innerHTML` for html tags in IE8, I fixed this with `createElement` and `appendChild`:
+```javascript
+var form = document.createElement('form');
+var input = document.createElement('input');
+input.setAttribute('type', 'search');
+input.setAttribute('class', 'search');
+input.setAttribute('placeholder', 'Search contacts');
+input.setAttribute('id', 'search-field');
+var submitButton = document.createElement('button');
+submitButton.appendChild(document.createTextNode('Zoek'));
+submitButton.setAttribute('id', 'search-button');
+submitButton.setAttribute('type', 'submit');
+
+search.appendChild(form);
+form.appendChild(input);
+form.appendChild(submitButton);
+```
+
+#### addEventListener
 While testing in IE8 I noticed that the event listeners weren't working, after Googling it I found a fallback on [Stack Overflow](http://stackoverflow.com/questions/9769868/addeventlistener-not-working-in-ie8).
 
 ```javascript
@@ -110,5 +139,27 @@ if (searchField.addEventListener) { // if addEventListener is a function
 
 ```
 
+#### parentNode
+Then I found out `parentNode` wasn't working, I found a different way to get the value of the input:
+```javascript
+  document.getElementById('search-field').value.charAt(0).toUpperCase() + document.getElementById('search-field').value.slice(1); // to make every query be capitalized.
+```
 
+#### event.preventDefault()
+Not supported, found a fallback:
+```javascript
+  el.returnValue = false; // el is the parameter of the event function
+```
 
+#### :target
+The CSS `:target` selector is not supported in IE8. All details from contacts were viewed by using a target selector. I first tried to use the @supports feature detection of CSS, but this of course didn't work because `:target` is not a css rule, it's a selector.
+I decided to fix it with Javascript and added a class.
+
+#### classList 
+ClassList is also not supported in IE8, I fixed this by using `className`:
+```javascript
+  var details = document.querySelectorAll('#details');
+  for (i=0; i<details.length; i++) {
+    details[i].className += 'internet-explorer';
+  }
+```
