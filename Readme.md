@@ -89,8 +89,9 @@ In Edge the sticky header doesn't work, it acts as if it's set to `position: ini
 
 ![edge non sticky header](/img/edge-sticky.jpg)
 
-### Firefox
-
+### [Firefox](#firefox)
+Everything works in firefox.
+![firefox](/img/firefox)
 
 ### [IE8](#IE8)
 Everything broke in IE8, here is a list and I'm sure I forgot something:
@@ -101,7 +102,7 @@ Everything broke in IE8, here is a list and I'm sure I forgot something:
 - `:target`
 - `classList`
 
-#### .innerHTML
+#### `.innerHTML`
 Appearently you cannot use `.innerHTML` for html tags in IE8, I fixed this with `createElement` and `appendChild`:
 ```javascript
 var form = document.createElement('form');
@@ -120,7 +121,7 @@ form.appendChild(input);
 form.appendChild(submitButton);
 ```
 
-#### addEventListener
+#### `addEventListener`
 While testing in IE8 I noticed that the event listeners weren't working, after Googling it I found a fallback on [Stack Overflow](http://stackoverflow.com/questions/9769868/addeventlistener-not-working-in-ie8).
 
 ```javascript
@@ -139,23 +140,23 @@ if (searchField.addEventListener) { // if addEventListener is a function
 
 ```
 
-#### parentNode
+#### `parentNode`
 Then I found out `parentNode` wasn't working, I found a different way to get the value of the input:
 ```javascript
   document.getElementById('search-field').value.charAt(0).toUpperCase() + document.getElementById('search-field').value.slice(1); // to make every query be capitalized.
 ```
 
-#### event.preventDefault()
+#### `event.preventDefault()`
 Not supported, found a fallback:
 ```javascript
   el.returnValue = false; // el is the parameter of the event function
 ```
 
-#### :target
+#### `:target`
 The CSS `:target` selector is not supported in IE8. All details from contacts were viewed by using a target selector. I first tried to use the @supports feature detection of CSS, but this of course didn't work because `:target` is not a css rule, it's a selector.
 I decided to fix it with Javascript and added a class.
 
-#### classList 
+#### `classList` 
 ClassList is also not supported in IE8, I fixed this by using `className`:
 ```javascript
   var details = document.querySelectorAll('#details');
