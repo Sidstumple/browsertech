@@ -493,7 +493,7 @@
       window.location.hash = window.location.hash;
       console.log(document.querySelectorAll('#search-field'))
       console.log('This is for IE8 or lower');
-      searchField.attachEvent("onclick", function (el) {
+      searchField.attachEvent("onsubmit", function (el) {
         el.returnValue = false;
         console.log(searchField.value);
         console.log('//////////////');
