@@ -507,7 +507,7 @@
         console.log(el.value);
         console.log('//////////////');
         console.log(el.parentElement);
-        var val =  document.getElementById('search-field').value;
+        var val =  document.getElementById('search-field').value.charAt(0).toUpperCase() + document.getElementById('search-field').value.slice(1);
         console.log(val);
         window.location.hash = val;
       })
