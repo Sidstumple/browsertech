@@ -502,12 +502,12 @@
       console.log(document.getElementById('search-field').value, '//////');
       console.log('This is for IE8 or lower');
       searchButton.attachEvent("onclick", function (el) {
-        console.log(document.getElementById('search-field').value, '+++');
+        console.log(document.getElementById('search-field').value);
         el.returnValue = false;
         console.log(el.value);
         console.log('//////////////');
         console.log(el.parentElement);
-        var val =  el.parentNode.childNodes[0].nodeValue;
+        var val =  document.getElementById('search-field').value;
         console.log(val);
         window.location.hash = val;
       })
