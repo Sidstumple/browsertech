@@ -499,7 +499,7 @@
     }
     else {
       window.location.hash = window.location.hash;
-      console.log(document.querySelectorAll('#search-field').value, '+++++++')
+      console.log(document.querySelectorAll('#search-field').innerText)
       console.log('This is for IE8 or lower');
       searchButton.attachEvent("onclick", function (el) {
         el.returnValue = false;
