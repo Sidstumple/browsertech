@@ -467,14 +467,14 @@
           Company: 'Aliquam Industries' } ];
 
       if(search.innerHTML) {
-        search.innerHTML = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-button">Zoek</button></form>';
+        search.innerHTML = '<form><input type="search" class="search" placeholder="Search contacts" id="search-field"></input><button type="submit" id="search-button">Zoek</button></form>';
       } else {
         var form = document.createElement('form');
         var input = document.createElement('input');
         input.setAttribute('type', 'search');
         input.setAttribute('class', 'search');
         input.setAttribute('placeholder', 'Search contacts');
-        input.id = 'search-field'
+        input.setAttribute('id', 'search-field');
         var submitButton = document.createElement('button');
         submitButton.appendChild(document.createTextNode('Zoek'));
         submitButton.setAttribute('id', 'search-button');
@@ -499,14 +499,15 @@
     }
     else {
       window.location.hash = window.location.hash;
-      console.log(document.querySelectorAll('#search-field').nodeValue)
+      console.log(document.getElementById('search-field').value, '//////');
       console.log('This is for IE8 or lower');
       searchButton.attachEvent("onclick", function (el) {
+        console.log(document.getElementById('search-field').value, '+++');
         el.returnValue = false;
         console.log(el.value);
         console.log('//////////////');
         console.log(el.parentElement);
-        var val =  this.parentNode.childNodes[0].nodeValue;
+        var val =  el.parentNode.childNodes[0].nodeValue;
         console.log(val);
         window.location.hash = val;
       })
