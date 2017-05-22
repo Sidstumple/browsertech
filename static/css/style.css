@@ -178,6 +178,12 @@ a.enabled {
   color: #555;
 }
 
+.internet-explorer {
+  height: 4.5em;
+  transition: 1s;
+  color: #555;
+}
+
 .anchor {
   display: block;
   position: relative;

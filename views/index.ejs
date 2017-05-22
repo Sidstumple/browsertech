@@ -32,7 +32,7 @@
               <div class="anchor" id="<%=data.lastName%>"></div>
               <li><a href="#<%= data.firstName%>">+<h2 class="name"><strong><%= data.lastName %></strong>, <%= data.firstName %></h2></a></li>
               <div id="<%= data.firstName%>" class="anchor"></div>
-                <div class="expand">
+                <div class="expand" id="details">
                 <li><%= data.Company %></li>
                 <li><%= data.phoneNumber %></li>
               </div>
@@ -498,15 +498,13 @@
       })
     }
     else {
+      var details = document.getElementById('details');
+      details.classList.add('internet-explorer');
       window.location.hash = window.location.hash;
-      console.log(document.getElementById('search-field').value, '//////');
       console.log('This is for IE8 or lower');
       searchButton.attachEvent("onclick", function (el) {
         console.log(document.getElementById('search-field').value);
         el.returnValue = false;
-        console.log(el.value);
-        console.log('//////////////');
-        console.log(el.parentElement);
         var val =  document.getElementById('search-field').value.charAt(0).toUpperCase() + document.getElementById('search-field').value.slice(1);
         console.log(val);
         window.location.hash = val;
