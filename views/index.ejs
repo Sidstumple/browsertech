@@ -505,7 +505,7 @@
         details[i].className += 'internet-explorer';
       }
       window.location.hash = window.location.hash;
-      searchButton.attachEvent('onsubmit', function (el) {
+      searchButton.attachEvent('onclick', function (el) {
         console.log(document.getElementById('search-field').value);
         el.returnValue = false;
         var val =  document.getElementById('search-field').value.charAt(0).toUpperCase() + document.getElementById('search-field').value.slice(1);
