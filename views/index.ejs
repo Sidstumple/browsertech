@@ -498,13 +498,14 @@
       })
     }
     else {
+      var details = document.getElementById('details');
+      
       console.log('This is for IE8 or lower');
       var links = document.querySelectorAll('.link');
       for (i=0; i < links.length; i++) {
         details.className += 'internet-explorer';
       }
 
-      var details = document.getElementById('details');
       details.className += 'internet-explorer';
       window.location.hash = window.location.hash;
       searchButton.attachEvent('onclick', function (el) {
