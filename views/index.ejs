@@ -499,14 +499,14 @@
     }
     else {
       window.location.hash = window.location.hash;
-      console.log(document.querySelectorAll('#search-field').innerHTML)
+      console.log(document.querySelectorAll('#search-field').nodeValue)
       console.log('This is for IE8 or lower');
       searchButton.attachEvent("onclick", function (el) {
         el.returnValue = false;
         console.log(el.value);
         console.log('//////////////');
 
-        var val =  document.querySelectorAll('#search-field').innerHTML;
+        var val =  document.querySelectorAll('#search-field').nodeValue;
         console.log(val);
         window.location.hash = val;
       })
