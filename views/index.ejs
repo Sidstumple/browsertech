@@ -503,7 +503,7 @@
       console.log('This is for IE8 or lower');
       searchButton.attachEvent("onclick", function (el) {
         el.returnValue = false;
-        console.log(this);
+        console.log(el);
         console.log('//////////////');
 
         var val =  this.parentNode.children[0].value;
