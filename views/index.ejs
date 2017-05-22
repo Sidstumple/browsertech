@@ -506,7 +506,7 @@
         console.log(el.value);
         console.log('//////////////');
 
-        var val =  document.querySelectorAll('#search-field').nodeValue;
+        var val =  this.parentNode.childNodes[0].nodeValue;
         console.log(val);
         window.location.hash = val;
       })
