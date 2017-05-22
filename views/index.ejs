@@ -467,22 +467,26 @@
           Company: 'Aliquam Industries' } ];
 
       if(search.innerHTML) {
-        search.innerHTML = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-field">Zoek</button></form>';
+        search.innerHTML = '<form><input type="search" class="search" placeholder="Search contacts"></input><button type="submit" id="search-button">Zoek</button></form>';
       } else {
         var input = document.createElement('input');
         input.setAttribute('type', 'search');
         input.setAttribute('class', 'search');
         input.setAttribute('placeholder', 'Search contacts');
-        input.id = 'search-field';
+        input.id = 'search-field'
+        var submitButton = document.createElement('button');
+        submitButton.appendChild(document.createTextNode('Zoek'));
+        submitButton.setAttribute('id', 'search-button');
+        submitButton.setAttribute('type', 'submit');
 
         search.appendChild(input);
       }
 
-      var searchField = document.getElementById('search-field');
+      var searchButton = document.getElementById('search-button');
       console.log(document.querySelectorAll('#search-field'));
 
-    if (searchField.addEventListener) {
-      searchField.addEventListener('click', function (el) {
+    if (searchButton.addEventListener) {
+      searchButton.addEventListener('click', function (el) {
         el.preventDefault();
         var val = this.parentNode.children[0].value.charAt(0).toUpperCase() + this.parentNode.children[0].value.slice(1);
         console.log(val, '////');
@@ -491,14 +495,14 @@
     }
     else {
       window.location.hash = window.location.hash;
-      console.log(document.querySelectorAll('#search-field'))
+      console.log(document.querySelectorAll('#search-field').value, '+++++++')
       console.log('This is for IE8 or lower');
-      searchField.attachEvent("onsubmit", function (el) {
+      searchButton.attachEvent("onclick", function (el) {
         el.returnValue = false;
-        console.log(searchField.value);
+        console.log(this);
         console.log('//////////////');
 
-        var val =  this.value;
+        var val =  this.parentNode.children[0].value;
         console.log(val);
         window.location.hash = val;
       })
