@@ -501,6 +501,7 @@
       console.log('This is for IE8 or lower');
       var contactElements = document.querySelectorAll('.contact');
       for (i=0; i < contactElements.length; i++) {
+        console.log(contactElements[i].id);
         document.getElementById(contactElements[i].id).attachEvent('onclick', function(event) {
           console.log('click');
           if (details.className == 'internet-explorer') {
