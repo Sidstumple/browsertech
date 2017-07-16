@@ -17,6 +17,8 @@ View live version on: https://browsertech.herokuapp.com/
   7.1 [Edge](#edge)<br>
   7.2 [IE11](#ie11) <br>
   7.3 [IE8](#ie8)<br>
+8. [Devicelab](#devicelab)
+9. [Screenreader](#screenreader)
 
 ## Summary
 This app was made for the course Browser Technologies of the Minor Web Development at the University of Applied Sciences Amsterdam. Browser Technologies helped us to view our websites and apps from a different angle, from a kind of dark place, sometimes literally, where a lot users of the internet reside. We were forced to face the facts: not everyone is viewing your app on the newest browser, not everyone has the fastest internet connection, and not everyone can see. The most important lesson I took from this was backwards compatability, start with a core- or basic functionality and make every step an enhancement, not a neccessity. 
@@ -166,10 +168,12 @@ ClassList is also not supported in IE8, I fixed this by using `className`:
 ```
 
 
-### Screenreader and devicelab testing
+## [Devicelab](#devicelab)
 ![Testing in device lab](/img/devicelab.gif)
 
 The website worked on every device, on some devices the website was slightly zoomed in, this was probably because I used `vw` for the width of the website. There were also some problems with the target selector, it sometimes made the details appear above the viewport. The rest of the website worked fine and as expected.
 
 ![Testing in device lab](/img/devicelab.jpg)
 
+## [Screenreader](#screenreader)
+I've tested with Apple's Voiceover, it worked pretty well. Except that the alphabet to easily go to a contact starting with a certain letter is at the end of the html which meant that a blind user would have to go though all the contact before being able to filter them. Also the detail elements were in seperate paragraph elements which means they will be read seperately. They could also use a description, otherwise users will not know if it's a company or f.e. a street name. 
