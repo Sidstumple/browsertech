@@ -4,7 +4,11 @@
   "description": "Assignment for the course Browser Technology for the minor Web Development",
   "main": "app.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "node app.js"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> b8bc2209755774430ad22c0a38d778b43b77a03f
   },
   "repository": {
     "type": "git",
