@@ -164,3 +164,12 @@ ClassList is also not supported in IE8, I fixed this by using `className`:
     details[i].className += 'internet-explorer';
   }
 ```
+
+
+### Screenreader and devicelab testing
+![Testing in device lab](/img/devicelab.gif)
+
+The website worked on every device, on some devices the website was slightly zoomed in, this was probably because I used `vw` for the width of the website. There were also some problems with the target selector, it sometimes made the details appear above the viewport. The rest of the website worked fine and as expected.
+
+![Testing in device lab](/img/devicelab.jpg)
+
